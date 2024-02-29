@@ -104,6 +104,11 @@ public class SpringArm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         // If target is null, return from here: NullReference check
         if (!target)
             return;
@@ -132,6 +137,7 @@ public class SpringArm : MonoBehaviour
         {
             cameraStatus = CameraStatus.Top;
         }
+       
 
         switch (cameraStatus)
         {
@@ -342,6 +348,8 @@ public class SpringArm : MonoBehaviour
 
     }
 
+#if UNITY_EDITOR
+
     private void OnDrawGizmosSelected()
     {
         if (!visualDebugging)
@@ -361,6 +369,7 @@ public class SpringArm : MonoBehaviour
             Handles.DrawAAPolyLine(springArmLineWidth, 2,
             transform.position, endPoint);
         }
+       
         // Draw collisionProbe, useful for debugging
         Handles.color = collisionProbeColor;
         if (showCollisionProbe)
@@ -369,6 +378,7 @@ public class SpringArm : MonoBehaviour
             2 * collisionProbeSize, EventType.Repaint);
         }
     }
+#endif
 
 }
 

@@ -867,7 +867,7 @@ MonoBehaviour:
   joystickSensitivity: 100
   visualDebugging: 1
   springArmColor: {r: 0.75, g: 0.2, b: 0.2, a: 0.75}
-  springArmLineWidth: 10
+  springArmLineWidth: 2.46
   showRaycasts: 1
   showCollisionProbe: 1
   target: {fileID: 1746964135}
